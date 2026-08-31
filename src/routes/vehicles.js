@@ -4,7 +4,7 @@ import { requireAdmin } from "../utils/auth.js";
 
 const router = Router();
 
-const REQUIRED_FIELDS = ["id", "name", "brand", "body", "year", "price"];
+const REQUIRED_FIELDS = ["id", "name", "price"];
 const STATUS_VALUES = ["publicado", "borrador", "vendido"];
 
 function validateVehiclePayload(payload) {

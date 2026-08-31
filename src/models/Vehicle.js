@@ -4,9 +4,9 @@ const vehicleSchema = new mongoose.Schema(
   {
     id: { type: String, required: true, unique: true },
     name: { type: String, required: true },
-    brand: { type: String, required: true },
-    body: { type: String, required: true },
-    year: { type: Number, required: true },
+    brand: { type: String },
+    body: { type: String },
+    year: { type: Number },
     price: { type: Number, required: true },
     km: { type: Number },
     engine: { type: String },
