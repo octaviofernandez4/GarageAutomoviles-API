@@ -16,7 +16,7 @@ const vehicleSchema = new mongoose.Schema(
     traction: { type: String, required: true },
     owners: { type: Number, required: true },
     badge: { type: String, required: true },
-    image: { type: String, required: true },
+    images: { type: [String], required: true, validate: (v) => v.length > 0 },
   },
   { timestamps: true }
 );

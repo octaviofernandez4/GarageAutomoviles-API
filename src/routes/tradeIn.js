@@ -1,5 +1,6 @@
 import { Router } from "express";
 import TradeInLead from "../models/TradeInLead.js";
+import { sendWhatsAppNotification } from "../utils/whatsapp.js";
 
 const router = Router();
 
@@ -28,6 +29,12 @@ router.post("/", async (req, res) => {
       estado,
       busca,
     });
+
+    try {
+      await sendWhatsAppNotification(lead);
+    } catch (err) {
+      console.error("Error al enviar notificación de WhatsApp:", err);
+    }
 
     res.status(201).json(lead);
   } catch (err) {
