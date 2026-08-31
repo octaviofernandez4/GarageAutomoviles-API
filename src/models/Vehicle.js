@@ -16,10 +16,13 @@ const vehicleSchema = new mongoose.Schema(
     traction: { type: String },
     owners: { type: Number },
     badge: { type: String },
-    description: { type: String, default: "" },
     images: { type: [String], default: [] },
     status: { type: String, enum: ["publicado", "borrador", "vendido"], default: "publicado" },
     featured: { type: Boolean, default: false },
+    checks: {
+      type: [{ title: String, description: String }],
+      default: [],
+    },
   },
   { timestamps: true }
 );
