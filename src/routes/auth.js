@@ -1,21 +1,12 @@
 import { Router } from "express";
 import bcrypt from "bcryptjs";
-import rateLimit from "express-rate-limit";
 import Admin from "../models/Admin.js";
 import { signAdminToken, requireAdmin } from "../utils/auth.js";
 import { validatePassword } from "../utils/passwordPolicy.js";
 
 const router = Router();
 
-const loginLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  limit: 5,
-  standardHeaders: true,
-  legacyHeaders: false,
-  message: { error: "Demasiados intentos. Probá de nuevo en 15 minutos." },
-});
-
-router.post("/login", loginLimiter, async (req, res) => {
+router.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
