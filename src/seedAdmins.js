@@ -9,6 +9,7 @@ import { validatePassword } from "./utils/passwordPolicy.js";
 const admins = [
   { name: "Octavio", email: "octavio@elgarage.com", password: "cambiar-esta-clave" },
   { name: "Dueño", email: "dueno@elgarage.com", password: "cambiar-esta-clave" },
+  { name: "Carlos", email: "carlos@elgarage.com", password: "cambiar-esta-clave" },
 ];
 
 async function run() {
