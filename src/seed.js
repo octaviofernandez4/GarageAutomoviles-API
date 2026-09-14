@@ -16,10 +16,6 @@ const DEFAULT_CHECKS = [
     title: "Peritaje de chapa y pintura",
     description: "Medición de espesor en los 12 paneles. Sin rastros de choque estructural.",
   },
-  {
-    title: "Test drive sin cargo",
-    description: "Podés manejarla acompañada por un asesor antes de decidir.",
-  },
 ];
 
 const vehicles = [
