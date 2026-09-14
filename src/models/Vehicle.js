@@ -9,6 +9,7 @@ const vehicleSchema = new mongoose.Schema(
     year: { type: Number },
     price: { type: Number, required: true },
     currency: { type: String, enum: ["USD", "ARS"], default: "USD" },
+    financeNote: { type: String },
     km: { type: Number },
     engine: { type: String },
     gearbox: { type: String },
